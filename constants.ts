@@ -15,23 +15,23 @@ export const PROFILE = {
       url: "https://www.saihst.kr/"
     }
   ],
-  biography: "임상 역학(Clinical Epidemiology)과 디지털 헬스(Digital Health)를 전공하며, 고독(Loneliness)과 멘탈 헬스(Mental Health)라는 현대적 사회 문제를 데이터 사이언스로 해결하고자 노력하는 연구자입니다. EMA(Ecological Momentary Assessment)와 패시브 센싱 데이터를 활용하여 인간의 건강 행동을 심도 있게 분석합니다."
+  biography: "가정의학 전문의로서 지역사회 주치의의 가치를 중시하며, 현대인의 외로움(Loneliness)과 커뮤니티 헬스(Community Health) 문제에 깊은 관심을 가지고 있습니다. 디지털 헬스 기술과 웨어러블 디바이스 데이터를 활용하여 임상 역학적 관점에서 환자들의 일상 속 건강 행동을 정밀하게 분석하고, 더 나은 공동체의 안녕을 위해 연구하는 학자입니다."
 };
 
 export const RESEARCH_INTERESTS: ResearchInterest[] = [
   {
     category: "Main Fields",
-    items: ["Clinical Epidemiology", "Digital Health"]
+    items: ["Family Medicine (가정의학)", "Clinical Epidemiology", "Digital Health"]
   },
   {
     category: "Core Themes",
-    items: ["Loneliness", "Mental Health"]
+    items: ["Loneliness (외로움)", "Community Health", "Primary Care (주치의)", "Mental Health"]
   },
   {
     category: "Methodology",
     items: [
       "Ecological Momentary Assessment (EMA)",
-      "Passive Sensing & Wearables",
+      "Passive Sensing & Wearable Devices",
       "Smartphone Sensing Analysis"
     ]
   },
