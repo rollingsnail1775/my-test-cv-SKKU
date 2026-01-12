@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { PROFILE } from '../constants';
+import { PROFILE } from '../constants.ts';
 
 const Footer: React.FC = () => {
   return (
@@ -31,7 +31,7 @@ const Footer: React.FC = () => {
         
         <div className="mt-24 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-[0.3em] text-gray-600">
             <p>© {new Date().getFullYear()} HYEONJIN CHO. ALL RIGHTS RESERVED.</p>
-            <p className="mt-4 md:mt-0 italic">Designed for Impact in Digital Health</p>
+            <p className="mt-4 md:mt-0 italic text-gray-400">Designed for Impact in Digital Health</p>
         </div>
       </div>
     </footer>

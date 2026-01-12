@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { SKILLS, SOFT_SKILLS } from '../constants';
+import { SKILLS, SOFT_SKILLS } from '../constants.ts';
 
 const Skills: React.FC = () => {
   return (

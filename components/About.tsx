@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { PROFILE, RESEARCH_INTERESTS } from '../constants';
+import { PROFILE, RESEARCH_INTERESTS } from '../constants.ts';
 
 const About: React.FC = () => {
   return (
@@ -10,7 +10,7 @@ const About: React.FC = () => {
           <div>
             <h2 className="font-serif text-4xl mb-10 tracking-tight">Academic Profile</h2>
             <div className="space-y-6">
-              {PROFILE.organizations.map((org: any, i) => {
+              {PROFILE.organizations.map((org: any, i: number) => {
                 const innerContent = (
                   <>
                     <p className="text-sm font-semibold text-gray-900 mb-1">{org.name}</p>

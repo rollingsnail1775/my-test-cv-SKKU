@@ -1,19 +1,20 @@
 
 import React, { useEffect } from 'react';
-import Navigation from './components/Navigation';
-import Hero from './components/Hero';
-import About from './components/About';
-import Projects from './components/Projects';
-import Skills from './components/Skills';
-import Footer from './components/Footer';
+import Navigation from './components/Navigation.tsx';
+import Hero from './components/Hero.tsx';
+import About from './components/About.tsx';
+import Projects from './components/Projects.tsx';
+import Skills from './components/Skills.tsx';
+import Footer from './components/Footer.tsx';
 
 function App() {
   useEffect(() => {
-    // Smooth scroll behavior for internal links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
+    const handleScroll = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      const anchor = target.closest('a');
+      if (anchor && anchor.getAttribute('href')?.startsWith('#')) {
         e.preventDefault();
-        const targetId = this.getAttribute('href')?.substring(1);
+        const targetId = anchor.getAttribute('href')?.substring(1);
         const targetElement = document.getElementById(targetId || '');
         if (targetElement) {
           window.scrollTo({
@@ -21,8 +22,11 @@ function App() {
             behavior: 'smooth'
           });
         }
-      });
-    });
+      }
+    };
+
+    document.addEventListener('click', handleScroll);
+    return () => document.removeEventListener('click', handleScroll);
   }, []);
 
   return (
@@ -36,7 +40,6 @@ function App() {
       </main>
       <Footer />
       
-      {/* Floating CTA for Contact - Emulating the "Get Template" button in original design */}
       <a 
         href="mailto:guswls1775@skku.edu" 
         className="fixed bottom-8 right-8 z-50 bg-black text-white text-[10px] uppercase tracking-widest font-bold px-6 py-3 rounded-full shadow-2xl hover:scale-105 active:scale-95 transition-all hidden sm:block"

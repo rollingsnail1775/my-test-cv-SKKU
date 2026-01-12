@@ -1,13 +1,13 @@
 
 import React from 'react';
-import { PROFILE } from '../constants';
+import { PROFILE } from '../constants.ts';
 
 const Hero: React.FC = () => {
   return (
     <section id="home" className="pt-32 pb-20 md:pt-48 md:pb-32 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h1 className="font-serif text-5xl md:text-8xl leading-tight mb-6 animate-fade-in">
+          <h1 className="font-serif text-5xl md:text-8xl leading-tight mb-6">
             {PROFILE.name}
           </h1>
           <p className="text-gray-400 font-serif text-xl md:text-3xl italic">
@@ -35,14 +35,16 @@ const Hero: React.FC = () => {
 
           <div className="lg:col-span-6 flex justify-center">
             <div className="relative group">
-                <div className="w-64 h-80 md:w-80 md:h-[450px] overflow-hidden rounded-[100px] border-8 border-white shadow-2xl relative z-10">
+                <div className="w-64 h-80 md:w-80 md:h-[450px] overflow-hidden rounded-[100px] border-8 border-white shadow-2xl relative z-10 bg-gray-200">
                     <img 
                         src="https://picsum.photos/seed/doctor/600/800" 
                         alt="Hyeonjin Cho" 
                         className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100"
+                        onError={(e) => {
+                          (e.target as HTMLImageElement).src = 'https://via.placeholder.com/600x800?text=Profile';
+                        }}
                     />
                 </div>
-                {/* Decorative Elements */}
                 <div className="absolute -top-4 -right-4 w-32 h-32 bg-gray-100 rounded-full -z-10 blur-2xl opacity-50"></div>
                 <div className="absolute -bottom-4 -left-4 w-40 h-40 bg-gray-200 rounded-full -z-10 blur-3xl opacity-30"></div>
             </div>

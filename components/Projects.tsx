@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { PROJECTS } from '../constants';
+import { PROJECTS } from '../constants.ts';
 
 const Projects: React.FC = () => {
   return (
@@ -21,6 +21,9 @@ const Projects: React.FC = () => {
                     src={`https://picsum.photos/seed/${project.title}/800/600`} 
                     alt={project.title}
                     className="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src = 'https://via.placeholder.com/800x600?text=Project';
+                    }}
                 />
                 <div className="absolute top-4 right-4 bg-white px-3 py-1 rounded-full shadow-sm text-[10px] font-bold uppercase tracking-wider">
                     {project.period}
